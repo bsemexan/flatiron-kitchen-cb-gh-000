@@ -2,4 +2,11 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
+
+  <div class="field">
+    <% if !ingredients.blank? %>
+      <%= f.label :ingredients, 'Ingredients:' %><br>
+      <%= f.collection_check_boxes :ingredient_ids, ingredients, :id, :name %>
+    <% end %>
+  </div>
 <% end %>

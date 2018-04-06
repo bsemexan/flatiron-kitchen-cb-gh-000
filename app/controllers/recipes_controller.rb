@@ -21,6 +21,14 @@ class RecipesController < ApplicationController
   end
 
   def update
+    @recipe = Ingredient.find(params[:id])
+    @ingredient.update(ingredient_params)
+
+    if @ingredient.save
+      redirect_to ingredients_path
+    else
+      render :edit
+    end
   end
 
   private

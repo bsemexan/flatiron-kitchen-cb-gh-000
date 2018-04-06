@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.update(recipe_params)
 
-    if @ingredient.save
+    if @recipe.save
       redirect_to ingredients_path
     else
       render :edit

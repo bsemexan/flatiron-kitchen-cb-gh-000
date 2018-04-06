@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.update(ingredient_params)
+    @recipe.update(recipe_params)
 
     if @ingredient.save
       redirect_to ingredients_path

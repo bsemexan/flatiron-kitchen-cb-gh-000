@@ -4,6 +4,12 @@ class RecipesController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.new(recipe_params)
+    if @ingredient.save
+      redirect_to ingredients_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -14,7 +20,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-  private 
+  private
   def recipe_params
     params.require(:recipe).permit(:name)
   end

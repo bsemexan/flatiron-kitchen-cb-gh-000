@@ -5,6 +5,8 @@ class CreateRecipeIngredients < ActiveRecord::Migration
       t.integer :ingredient_id
     
       t.timestamps null: false
+      add_foreign_key :recipe_ingredients, :recipes
+      add_foreign_key :recipe_ingredients, :ingredients
     end
   end
 end

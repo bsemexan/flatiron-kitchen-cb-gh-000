@@ -21,6 +21,7 @@ class IngredientsController < ApplicationController
   end
 
   def update
+    @ingredient = Ingredient.find(params[:id])
     @ingredient.update(ingredient_params)
 
     if @ingredient.save

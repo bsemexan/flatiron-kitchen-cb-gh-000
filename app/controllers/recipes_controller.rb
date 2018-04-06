@@ -28,6 +28,7 @@ class RecipesController < ApplicationController
       redirect_to recipes_path
     else
       render :edit
+    
     end
   end
 

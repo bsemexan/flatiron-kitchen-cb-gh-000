@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    if @ingredient.save
+    if @recipe.save
       redirect_to ingredients_path
     else
       render :new
